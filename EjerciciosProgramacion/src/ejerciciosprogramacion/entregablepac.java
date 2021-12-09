@@ -3,7 +3,6 @@
  * Licencia Creative Commons BY-NC-SA 4.0
  * https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
-
 package ejerciciosprogramacion;
 
 import java.util.Arrays;
@@ -33,7 +32,6 @@ public class entregablepac {
     public static int Pared = -5;
     public static int Nada = 7;
      */
-
     // Movimiento del fanstasma 1 aleatorio
     public static void FantasmaMovimiento1(String[][] tablero) {
         double x = (double) (Math.random() * +1);
@@ -74,6 +72,7 @@ public class entregablepac {
         }
 
     }
+
     // Movimiento del fanstasma 2 aleatorio
     public static void FantasmaMovimiento2(String[][] tablero) {
         double x = (double) (Math.random() * +1);
@@ -114,6 +113,7 @@ public class entregablepac {
         }
 
     }
+
     // Movimiento del fanstasma 3 aleatorio
     public static void FantasmaMovimiento3(String[][] tablero) {
         double x = (double) (Math.random() * +1);
@@ -201,6 +201,9 @@ public class entregablepac {
                     PacmanF--;
                     tablero[PacmanF][PacmanC] = " ";
                     Puntuacion += 50;
+                } else if (tablero[PacmanF][PacmanC].equals("☠ ")) {
+                    System.out.println("Has perdido :(");
+                    Muerte = true;
                 } else {
                     PacmanF--;
                 }
@@ -221,6 +224,9 @@ public class entregablepac {
                     PacmanC--;
                     tablero[PacmanF][PacmanC] = " ";
                     Puntuacion += 50;
+                } else if (tablero[PacmanF][PacmanC].equals("☠ ")) {
+                    System.out.println("Has perdido :(");
+                    Muerte = true;
                 } else {
                     PacmanC--;
                 }
@@ -236,6 +242,9 @@ public class entregablepac {
                     PacmanF++;
                     tablero[PacmanF][PacmanC] = " ";
                     Puntuacion += 50;
+                } else if (tablero[PacmanF][PacmanC].equals("☠ ")) {
+                    System.out.println("Has perdido :(");
+                    Muerte = true;
                 } else {
                     PacmanF++;
                 }
@@ -252,13 +261,11 @@ public class entregablepac {
                     PacmanC++;
                     tablero[PacmanF][PacmanC] = " ";
                     Puntuacion += 50;
-                    
-                } else if (tablero[PacmanF][PacmanC].equals("☠ ")){
+
+                } else if (tablero[PacmanF][PacmanC].equals("☠ ")) {
                     System.out.println("Has perdido :(");
                     Muerte = true;
-                }
-                
-                else {
+                } else {
                     PacmanC++;
                 }
 
@@ -266,6 +273,7 @@ public class entregablepac {
         }
         System.out.println("Your score is:" + Puntuacion);
     }
+
     //Imprime el tablero con los personajes y se actualiza
     public static void imprimirTablero(String[][] tablero) {
         for (int i = 0; i < tablero.length; i++) {
@@ -311,6 +319,7 @@ public class entregablepac {
         }
 
     }
+
     // Función para creación de tableros
     public static String[][] dameTablero() {
 
@@ -343,7 +352,6 @@ public class entregablepac {
         // Crear tablero, pacman y fantasmas
         String[][] tablero = dameTablero();
 
-
         // Rondas de la partida
         while (Puntuacion != 480 || Muerte == true) {
             // mostrar tablero
@@ -357,12 +365,11 @@ public class entregablepac {
             FantasmaMovimiento3(tablero);
 
             // mensaje de ganar
-            if(Puntuacion == 480){
-            System.out.println("Has ganado enhorabuena");
+            if (Puntuacion == 480) {
+                System.out.println("Has ganado enhorabuena");
             }
         }
 
-        
     }
 
 }
