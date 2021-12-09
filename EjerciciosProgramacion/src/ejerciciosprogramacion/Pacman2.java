@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author Kevin
  */
-public class Pacman {
+public class Pacman2 {
 
     public static int PacmanF = 1;
     public static int PacmanC = 1;
@@ -76,23 +76,15 @@ public class Pacman {
 
     }
 
-    public static void imprimirTablero(String[][] tablero) {
+    public static void imprimirTablero(String[][] tablero1) {
         int cont = 0;
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
+        for (int i = 0; i < tablero1.length; i++) {
+            for (int j = 0; j < tablero1[i].length; j++) {
 
                 if (i == PacmanF && j == PacmanC) {
 
                     System.out.print("< ");
-                    if (i == FantasmaF1 && j == FantasmaC1) {
-                        System.out.print("୦ ");
-                    }
-                    if (i == FantasmaF2 && j == FantasmaC2) {
-                        System.out.print("୦ ");
-                    }
-                    if (i == FantasmaF3 && j == FantasmaC3) {
-                        System.out.print("୦ ");
-                    }
+                    System.out.print("୦ ");
 
                 } else if (i == FantasmaF1 && j == FantasmaC1) {
                     System.out.print("$ ");
@@ -107,13 +99,13 @@ public class Pacman {
                     //} else if (PacmanF == FantasmaF3 && PacmanC == FantasmaC3) {
                     //    System.out.print("୦ ");
                 } else {
-                    System.out.print(tablero[i][j] + " ");
+                    System.out.print(tablero1[i][j] + " ");
                 }
 
             }
             System.out.println("");
         }
-        if (PacmanF == 0 || PacmanF == tablero.length - 1) {
+        /* if (PacmanF == 0 || PacmanF == tablero.length -1) {
             System.out.println("No te salgas fuera! si sales mas se acaba :( ");
             cont++;
             if (cont == 1) {
@@ -125,18 +117,18 @@ public class Pacman {
             cont++;
             if (cont == 1) {
                 System.out.println("Por tramposo!");
-            }
+           }
 
-        }
+        }*/
     }
 
-    public static String[][] dameTablero() {
+    public static int[][] dameTablero() {
 
-        String[][] tablero1 = {
+        String[][] tablero3 = {
             {"F", "F", "F", "F", "F", "F", "F", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
-            {"F", "-", "F", "F", "F", "F", "-", "F"},
+            {"F", "-", "F", "F", "F", "-", "-", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
@@ -149,10 +141,18 @@ public class Pacman {
             {"F", "F", "F"}
         };
 
-        int[][] tablero3 = {
-            {},
-            {},
-            {}
+        int[][] tablero1 = {
+           
+            
+            
+            {-5, -5, -5, -5, -5, -5, -5, -5},
+            {-5, 7, 7, 7, 7, 7, 7, -5},
+            {-5, 7, 7, 7, 7, 7, 7, -5},
+            {-5, 7, -5, -5, -5, -5, 7, -5},
+            {-5, 7, 7, 7, 7, 7, 7, -5},
+            {-5, 7, 7, 7, 7, 7, 7, -5},
+            {-5, 7, 7, 7, 7, 7, 7, -5},
+            {-5, -5, -5, -5, -5, -5, -5, -5}
         };
 
         return tablero1;
@@ -166,7 +166,7 @@ public class Pacman {
         Scanner in = new Scanner(System.in);
 
         // Crear tablero, pacman y fantasmas
-        String[][] tablero = dameTablero();
+        int[][] tablero = dameTablero();
 
         /*
         añadir fantasmas
@@ -174,7 +174,7 @@ public class Pacman {
         // Rondas de la partida
         for (int i = 0; i < 1000; i++) {
             // mostrar tablero
-            imprimirTablero(tablero);
+            imprimirTablero(tablero1);
 
             // preguntar movimiento
             moverPacman();

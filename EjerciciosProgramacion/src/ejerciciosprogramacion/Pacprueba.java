@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * @author Kevin
  */
-public class Pacman {
+public class Pacprueba {
 
     public static int PacmanF = 1;
     public static int PacmanC = 1;
@@ -17,13 +17,20 @@ public class Pacman {
     public static int FantasmaC2 = 1;
     public static int FantasmaF3 = 1;
     public static int FantasmaC3 = 3;
-    public static int Pastillas = -1;
+
+    /*public static int Pastillas = -1;
     public static int Fruta = 5;
     public static int Pared = -5;
     public static int Nada = 7;
-
+     */
     public static void Puntuaciones() {
-
+    int puntos;
+    
+    }
+    
+    public static void Desaparece(String[][] tablero){
+        
+        
     }
 
     // public static void Pastillas() {
@@ -52,7 +59,7 @@ public class Pacman {
         char $ = 36;
 
     }*/
-    public static void moverPacman() {
+    public static void moverPacman(String[][] tablero) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Dime tu siguiente movimiento , usando WASD");
@@ -60,17 +67,39 @@ public class Pacman {
         letra = in.next().charAt(0);
 
         switch (letra) {
+
             case 'w':
-                PacmanF--;
+                if (tablero[PacmanF - 1][PacmanC].equals("F")) {
+
+                } else {
+                    PacmanF--;
+                }
+
                 break;
+
             case 'a':
-                PacmanC--;
+                if (tablero[PacmanF][PacmanC - 1].equals("F")) {
+                
+                } else {
+
+                    PacmanC--;
+                }
                 break;
             case 's':
-                PacmanF++;
+                if (tablero[PacmanF + 1][PacmanC].equals("F")) {
+
+                } else {
+                    PacmanF++;
+                }
+
                 break;
             case 'd':
-                PacmanC++;
+                if (tablero[PacmanF][PacmanC + 1].equals("F")) {
+
+                } else {
+                    PacmanC++;
+                }
+
                 break;
         }
 
@@ -83,17 +112,23 @@ public class Pacman {
 
                 if (i == PacmanF && j == PacmanC) {
 
-                    System.out.print("< ");
-                    if (i == FantasmaF1 && j == FantasmaC1) {
+                    /*if (i == FantasmaF1 && j == FantasmaC1) {
                         System.out.print("୦ ");
-                    }
+                    
                     if (i == FantasmaF2 && j == FantasmaC2) {
                         System.out.print("୦ ");
-                    }
+                    
                     if (i == FantasmaF3 && j == FantasmaC3) {
                         System.out.print("୦ ");
                     }
+                     */
+                    if ((i == FantasmaF1) && (j == FantasmaC1) || (i == FantasmaF2) && (j == FantasmaC2) || (i == FantasmaF3) && (j == FantasmaC3)) {
 
+                        System.out.print("୦ ");
+                    } else {
+                        System.out.print("< ");
+
+                    }
                 } else if (i == FantasmaF1 && j == FantasmaC1) {
                     System.out.print("$ ");
                     //} else if (PacmanF == FantasmaF1 && PacmanC == FantasmaC1) {
@@ -113,26 +148,12 @@ public class Pacman {
             }
             System.out.println("");
         }
-        if (PacmanF == 0 || PacmanF == tablero.length - 1) {
-            System.out.println("No te salgas fuera! si sales mas se acaba :( ");
-            cont++;
-            if (cont == 1) {
-                System.out.println("Por tramposo!");
-            }
-        }
-        if (PacmanC == 0 || PacmanC == 7) {
-            System.out.println("No te salgas fuera! si sales mas se acaba :( ");
-            cont++;
-            if (cont == 1) {
-                System.out.println("Por tramposo!");
-            }
 
-        }
     }
 
     public static String[][] dameTablero() {
 
-        String[][] tablero1 = {
+        String[][] tablero = {
             {"F", "F", "F", "F", "F", "F", "F", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
             {"F", "-", "-", "-", "-", "-", "-", "F"},
@@ -155,7 +176,7 @@ public class Pacman {
             {}
         };
 
-        return tablero1;
+        return tablero;
 
     }
 
@@ -177,7 +198,7 @@ public class Pacman {
             imprimirTablero(tablero);
 
             // preguntar movimiento
-            moverPacman();
+            moverPacman(tablero);
             // comprobar movimiento
 
             // mover a pacman
