@@ -17,22 +17,10 @@ import java.util.Scanner;
 public class PidoNumero {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int numero = 1;
-        int fin = 10;
-        int respuesta;
-        System.out.println("Dime un numero del 1 al 10");
-        respuesta = in.nextInt();
-        if(respuesta <= fin ){
-            System.out.println(respuesta);
-            
-        }
-        else{
-            
-        }
-        
-        }
-            
-        
+int[] m = new int[10];
+for (int i = 0; i < m.length; i++)
+    m[i] = i + 1;
+for (int i = 1; i < m.length; i += 2)
+    System.out.print(m[i] + " ");
     }
-
+}
