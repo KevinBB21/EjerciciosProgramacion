@@ -19,24 +19,24 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
 
-        Persona karim = new Persona();
-        karim.nombre = in.nextLine();
-        karim.apellidos = in.nextLine();
-        karim.dni = in.nextLine();
-        karim.edad = in.nextInt();
+        Persona karim = new Persona("karim", "apellido" , "sadadas", 154);
+        //karim.nombre = in.nextLine();
+        //karim.apellidos = in.nextLine();
+        //karim.dni = in.nextLine();
+        //karim.edad = in.nextInt();
 
-        in.nextLine();
-        Persona carlitos = new Persona();
-        carlitos.nombre = in.nextLine();
-        carlitos.apellidos = in.nextLine();
-        carlitos.dni = in.nextLine();
-        carlitos.edad = in.nextInt();
         
-        System.out.println("Esta persona tiene estos datos :" + karim.nombre + ", " + karim.apellidos + ", " + karim.dni + ", " + karim.edad);
-        karim.mayor(karim.edad);
+        Persona carlitos = new Persona("carlitos","apellido","sdadsad",13);
+        //carlitos.nombre = in.nextLine();
+        //carlitos.apellidos = in.nextLine();
+        //carlitos.dni = in.nextLine();
+        //carlitos.edad = in.nextInt();
         
-        System.out.println("Esta persona tiene estos datos :" + carlitos.nombre + ", " + carlitos.apellidos + ", " + carlitos.dni + ", " + carlitos.edad);
-        carlitos.mayor(carlitos.edad);
+        System.out.println("Esta persona tiene estos datos :" + karim.getNombre() + ", " + karim.getApellidos() + ", " + karim.getDni() + ", " + karim.getEdad());
+        karim.mayor(karim.getEdad());
+        
+        System.out.println("Esta persona tiene estos datos :" + carlitos.getNombre() + ", " + carlitos.getApellidos() + ", " + carlitos.getDni() + ", " + carlitos.getEdad());
+        carlitos.mayor(carlitos.getEdad());
 
     }
 }

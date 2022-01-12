@@ -3,7 +3,6 @@
  * Licencia Creative Commons BY-NC-SA 4.0
  * https://creativecommons.org/licenses/by-nc-sa/4.0/
  */
-
 package EjerciciosPOO.Persona;
 
 /**
@@ -14,24 +13,58 @@ package EjerciciosPOO.Persona;
  */
 public class Persona {
 
-    public String dni;
-    public String nombre; 
-    public String apellidos;
-    public int edad;
-   
-    
-    public void mayor (int e){
-       e = edad;
+    private String dni;
+    private String nombre;
+    private String apellidos;
+    private int edad;
+
+    public Persona(String dni, String nombre, String apellidos, int edad) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setDni(int edad) {
+        this.edad = edad;
+    }
+
+    public void mayor(int e) {
+        e = edad;
         if (e < 18) {
             System.out.println("Es menor de edad");
+        } else {
+            System.out.println("Es mayor de edad");
         }
-        else{
-            System.out.println("ES mayor de edad");
-        }
-   }
-    
+    }
+
 }
-
-   
-
- 

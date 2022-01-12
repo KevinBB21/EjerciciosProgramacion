@@ -15,7 +15,7 @@ package EjerciciosPOO.Articulo;
 public class Main {
     public static void main(String[] args) {
         
-        
-        
+     Articulo n1 = new Articulo("pepito" , 20 ,12);   
+        System.out.println("Nombre del comprador "+n1.nombre + " Precio con IVA: " +(n1.precio * 1.21)+"€" + " Stock disponible  " + n1.stock);
     }
 }
