@@ -16,20 +16,22 @@ public class Rectangulo {
     private int x1, y1, x2, y2;
 
     public Rectangulo(int x1, int y1, int x2, int y2) {
-        if(x2 > x1 && y2 > y1){
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+        if (x2 > x1 && y2 > y1) {
             this.x1 = x1;
             this.y1 = y1;
             this.x2 = x2;
             this.y2 = y2;
-        }
-        else
+        } else {
             System.err.println("Error");
+        }
 
     }
-   
-    
 
-    public void sumalado(int a, int b, int c, int d) {
+    public int sumalado(int a, int b, int c, int d) {
         a = x1;
         b = x2;
         c = y1;
@@ -37,10 +39,10 @@ public class Rectangulo {
         int e = Math.abs(b - a);
         int i = Math.abs(d - c);
         int suma = e + i;
-        System.out.println("La suma de los lados es " + suma);
+        return suma;
     }
 
-    public void areas(int a, int b, int c, int d) {
+    public int areas(int a, int b, int c, int d) {
         a = x1;
         b = x2;
         c = y1;
@@ -48,7 +50,7 @@ public class Rectangulo {
         int e = Math.abs(b - a);
         int i = Math.abs(d - c);
         int area = e * i;
-        System.out.println("El area de los lados es " + area);
+        return area;
 
     }
 
@@ -65,7 +67,7 @@ public class Rectangulo {
     }
 
     public int getY2() {
-    return y2;
+        return y2;
     }
 
     public void setX1(int x1) {
@@ -107,4 +109,28 @@ public class Rectangulo {
             System.out.println("Mal y2 no puede ser menor a y1");
         }
     }
+
+    public void imprimir() {
+        System.out.println("La informacion del triangulo es: " + getX1() + ", " + getX2() + ", " + getY1() + ", " + getY2());
+    }
+
+    public void setX1Y1(int x1, int y1) {
+        setX1(x1);
+        setY1(y1);
+
+    }
+
+    public void setX2Y2(int x2, int y2) {
+        setX2(x2);
+        setY2(y2);
+
+    }
+
+    public void setX1X2Y1Y2(int x1, int x2, int y1, int y2) {
+        setX1(x1);
+        setX2(x2);
+        setY1(y1);
+        setY2(y2);
+    }
+
 }

@@ -38,5 +38,7 @@ public class Main {
         System.out.println("Esta persona tiene estos datos :" + carlitos.getNombre() + ", " + carlitos.getApellidos() + ", " + carlitos.getDni() + ", " + carlitos.getEdad());
         carlitos.mayor(carlitos.getEdad());
 
+        System.out.println(karim.diferenciaEdad(carlitos));
+        
     }
 }

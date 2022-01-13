@@ -33,6 +33,21 @@ public class Punto {
     public void setY(int y){
         this.y = y;
     }
-
     
+    public void imprime(){
+        System.out.println("(" + getX() + ","+ getY() +")");
+    }
+    public void setXY(int x, int y){
+        setX(x);
+        setY(y);
+    }
+    
+    public void desplaza(int dx, int dy){
+        setX(x + dx);
+        setY(y + dy);
+        
+    }
+    public int distancia(Punto p){
+        return (int) Math.sqrt((p.x - this.x) * (p.x - this.x) + (p.y - this.y) * (p.y - this.y));
+    }
 }

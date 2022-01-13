@@ -48,16 +48,44 @@ public class Articulo {
     public int getStock() {
         return stock;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio <= 0) {
+            System.out.println("Error no puede ser gratis!");
+        } else {
+            this.precio = precio;
+        }
     }
+
     public void setIva(double iva) {
-        this.iva = iva;
+        if (iva == 1.21) {
+            this.iva = iva;
+        } else {
+            System.err.println("Error");
+        }
+
     }
+
     public void setStock(int stock) {
-        this.stock = stock;
+        if (stock >= 0) {
+            this.stock = stock;
+        } else {
+            System.err.println("Error");
+        }
+    }
+    public void imprimir(){
+        System.out.println(getNombre() + ", " + getPrecio() + ", " + getIva() + ", " + getStock());
+    }
+    
+    public double getPVP(){
+        return (precio * iva);
+    }
+    
+    public double getPVPDescuento(int descuento){
+        return (precio * (1 - (descuento/100)));
     }
 }

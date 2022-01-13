@@ -36,5 +36,9 @@ public class Programa {
         //this.setX() = this.getX() * 3;
         System.out.println(p2.getX());
         
+        p1.setXY(0,0);
+        p2.setXY(2,2);
+        
+        System.out.println(p1.distancia(p2));
     }
 }
