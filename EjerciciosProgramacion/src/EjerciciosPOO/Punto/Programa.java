@@ -40,5 +40,10 @@ public class Programa {
         p2.setXY(2,2);
         
         System.out.println(p1.distancia(p2));
+        
+        
+        Punto p7 = Punto.creaPuntoAleatorio();
+        
+        p7.imprime();
     }
 }
