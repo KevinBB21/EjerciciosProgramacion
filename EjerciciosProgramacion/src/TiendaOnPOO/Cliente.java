@@ -60,16 +60,25 @@ public class Cliente {
     }
 
     public void añadirArticuloCarrito(Articulo a, int cantidad) {
-        //articulos[posicion].setCuantos(articulos[posicion].getCuantos() + cantidad);
-        carrito[contador] = new Articulo(a.getNombre(), a.getPrecio(), a.getIva(), cantidad);
-        contador++;
+        if (cantidad > a.getCuantos()) {
+            System.err.println("No hay esa cantidad, actualmente en stock solo quedan: " + a.getCuantos());
+        } else {
+            //articulos[posicion].setCuantos(articulos[posicion].getCuantos() + cantidad);
+            carrito[contador] = new Articulo(a.getNombre(), a.getPrecio(), a.getIva(), cantidad);
+            contador++;
+            
+            //this.carrito[contador].setCuantos(this.carrito[cantidad].getCuantos() + cantidad);
+            //Articliente[contador] += Articliente[contador].getCuantos() + cantidad;   
+        }
 
-        //this.carrito[contador].setCuantos(this.carrito[cantidad].getCuantos() + cantidad);
-        //Articliente[contador] += Articliente[contador].getCuantos() + cantidad;
     }
 
     public void eliminarArticuloCarrito(int posicion, int cantidad) {
-        this.carrito[posicion].setCuantos(this.carrito[posicion].getCuantos() - cantidad);
+        if (cantidad > this.carrito[posicion].getCuantos() && posicion < this.carrito.length) {
+            System.err.println("No hay esa cantidad, actualmente la cantidad de articulos en tu carrito es de:" + this.carrito[posicion].getCuantos());
+        } else {
+            this.carrito[posicion].setCuantos(this.carrito[posicion].getCuantos() - cantidad);
+        }
     }
 
     public void imprimecli() {

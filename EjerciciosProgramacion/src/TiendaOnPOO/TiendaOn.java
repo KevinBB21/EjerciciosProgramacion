@@ -67,11 +67,12 @@ public class TiendaOn {
         articulos[posicion] = x;
 
     }
+    
+    
 
     public void imprime() {
         for (int i = 0; i < articulos.length; i++) {
-
-            System.out.println("Nombre: " + articulos[i].getNombre() + " " + "Precio: " + articulos[i].getPrecio() + "€ " + "Iva: " + articulos[i].getIva() + " " + "Cuantos: " + articulos[i].getCuantos());
+            System.out.println(i + " " +  articulos[i].getNombre() + " " + articulos[i].getPrecio() + "€ " + "Iva: " + articulos[i].getIva() + " " + "Stock: " + articulos[i].getCuantos());
         }
     }
 
