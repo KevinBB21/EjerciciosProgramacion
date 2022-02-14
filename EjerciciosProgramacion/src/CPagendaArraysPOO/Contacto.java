@@ -14,51 +14,55 @@ package CPagendaArraysPOO;
  */
 public class Contacto {
 
-    
-    private String nombre;
-    private String telefono;
-    private String correo;
-    
-    public Contacto(String nombre, String telefono, String correo){
+    // Atributos
+    String nombre;
+    String telefono;
+    String correo;
+
+    // Constructor
+    public Contacto(String nombre, String telefono, String correo) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
     }
+
+    // Getters y Setters
     
-    public String getNombre(){
-        return this.nombre;
+    public String getNombre() {
+        return nombre;
     }
-    
-    public String getTelefono(){
-        return this.telefono;
-    }
-    
-    public String getCorreo(){
-        return this.correo;
-    }
-    
-    public void setNombre(String nombre){
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public void setTelefono(String telefono){
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    public void setCorreo(String correo){
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
+
+    // Devuelve un String con la información del contacto
+    public String getAll() {
+        return (nombre + " " + telefono + " " + correo);
+    }
     
-    public void imprime(){
+    // Imprime la información del contacto
+    public void imprimir() {
         System.out.println(getAll());
     }
-    
-    public String getAll(){
-        
-        return getNombre()+ " " + getTelefono() + " " + getCorreo();
-        
-    }
-    
+
+}
     
     
     
