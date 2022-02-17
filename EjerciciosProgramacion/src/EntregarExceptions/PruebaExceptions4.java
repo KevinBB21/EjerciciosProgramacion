@@ -24,29 +24,29 @@ public class PruebaExceptions4 {
         int pos = 0;
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < v.length; i++) {
-            
+
             v[i] = (int) (Math.random() * (10 - 1 + 1) + 1);
         }
-            do {
-                try {
-                    pos = in.nextInt();
-                    cond = true;
-                    System.out.println(v[pos]);
-                } catch (InputMismatchException e) {
-                    System.out.println("No es un valor que se pueda añadir al vector");
-                    in.nextLine();
-                } catch (ArrayStoreException a) {
-                    System.out.println("No es un objeto que se pueda añadir");
-                    in.nextLine();
-                }catch (ArrayIndexOutOfBoundsException u) {
-                    System.out.println("No es un objeto que se pueda añadir");
-                    in.nextLine();
-                }
-                    
+        do {
+            try {
+                pos = in.nextInt();
+                cond = true;
+                System.out.println(v[pos]);
+            } catch (InputMismatchException e) {
                 
-            } while (cond);
+                System.out.println("No es un valor que se pueda añadir al vector");
+                in.nextLine();
+                
+            } catch (ArrayStoreException a) {
+                System.out.println("No es un objeto que se pueda añadir");
+                in.nextLine();
+            } catch (ArrayIndexOutOfBoundsException u) {
+                System.out.println("No esta en el tamaño");
+                in.nextLine();
+            }
 
-        
+        } while (cond);
+
         for (int i = 0; i < v.length; i++) {
             System.out.println(v[i]);
         }

@@ -23,19 +23,19 @@ public class PruebaExceptions3 {
         Scanner in = new Scanner(System.in);
         for (int i = 0; i < v.length; i++) {
             cond = false;
-            do{
-                
-            try {
-                v[i] = in.nextInt();
-                cond = true;
-            } catch (InputMismatchException e) {
-                System.out.println("No es un valor que se pueda añadir al vector");
-                in.nextLine();
-            } catch (ArrayStoreException a) {
-                System.out.println("No es un objeto que se pueda añadir");
-                in.nextLine();
-            }
-            }while(!cond);
+            do {
+
+                try {
+                    v[i] = in.nextInt();
+                    cond = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("No es un valor que se pueda añadir al vector");
+                    in.nextLine();
+                } catch (ArrayStoreException a) {
+                    System.out.println("No es un objeto que se pueda añadir");
+                    in.nextLine();
+                }
+            } while (!cond);
         }
     }
 }

@@ -9,12 +9,6 @@ package EntregarExceptions;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- *
- * @author Kevin Blanco Bañuls <blancodaw22@gmail.com>
- * @version 1.0
- * @date 14 feb. 2022 20:43:47
- */
 public class PruebaException2 {
     public static void main(String[] args) {
                 Scanner in = new Scanner(System.in);
