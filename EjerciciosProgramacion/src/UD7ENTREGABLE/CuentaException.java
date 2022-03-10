@@ -7,7 +7,7 @@ package UD7ENTREGABLE;
 
 /**
  *
- * @author a033564158m
+ * @author Kevin Blanco Bañuls <blancodaw22@gmail.com>
  */
 public class CuentaException extends Exception{
     

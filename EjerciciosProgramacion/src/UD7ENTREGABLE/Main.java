@@ -7,7 +7,7 @@ package UD7ENTREGABLE;
 
 /**
  *
- * @author Carlos Sancho Sanfélix <carlos.sancho.sanfelix@gmail.com>
+ * @author Kevin Blanco Bañuls <blancodaw22@gmail.com>
  * @version 1.0
  * @date 29 ene. 2022 10:48:33
  */
