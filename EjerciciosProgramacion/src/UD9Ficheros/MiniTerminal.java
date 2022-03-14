@@ -54,10 +54,16 @@ public class MiniTerminal {
 
                     break;
                 case 5:
-
+                    String nombreDirectorio;
+                    System.out.println("Dime el nombre del directorio");
+                    nombreDirectorio = in.nextLine();
+                    ruta.mkdirDIR(nombreDirectorio);
                     break;
                 case 6:
-
+                    String elimDirectorio;
+                    System.out.println("Dime el nombre del directorio");
+                    elimDirectorio = in.nextLine();
+                    ruta.eliminarDirectorio(elimDirectorio);
                     break;
                 case 7:
 

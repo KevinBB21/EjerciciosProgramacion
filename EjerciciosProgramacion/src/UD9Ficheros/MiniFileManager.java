@@ -19,7 +19,7 @@ public class MiniFileManager {
     private static File RutaActual = new File("/datos/usuarios/alumnos/a023326273h/NetBeansProjects/EjerciciosProgramacion/EjerciciosProgramacion/src/UD9Ficheros");
     private String RutaNow = RutaActual.getAbsolutePath();
     File[] arrayArchivos = RutaActual.listFiles();
-    
+
     public String getPWD() {
         return RutaActual.getAbsolutePath();
     }
@@ -37,18 +37,22 @@ public class MiniFileManager {
             }
         }
     }
-    
-    public void imprimePWD(){
+
+    public void imprimePWD() {
         System.out.println(RutaActual.getAbsolutePath());
     }
-    
-    public static void mkdirDIR(String nombre){
-      File nombre = new File(RutaActual.getAbsolutePath());   
-      nombre.mkdir();
+
+    public static void mkdirDIR(String nombre) {
+        File x = new File(RutaActual + "/" + nombre);
+        x.mkdir();
         System.out.println("Directorio creado");
-    } 
-    
-    
+    }
+
+    public void eliminarDirectorio(String nomdir) {
+        File x = new File(RutaActual + "/" + nomdir);
+        x.delete();
+    }
+
     public boolean changeDir(String dir) {
 
     }
